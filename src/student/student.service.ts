@@ -28,4 +28,42 @@ export class StudentService {
     this.students.push(newStudent);
     return newStudent;
   }
+
+  //PUT
+  updateStudent(id: number, updatedStudent: { name: string; age: number }) {
+    const studentIndex = this.students.findIndex(
+      (student) => student.id === id,
+    );
+    if (studentIndex === -1)
+      throw new NotFoundException(`Student with ID ${id} not found.`);
+    this.students[studentIndex] = {
+      id,
+      ...updatedStudent,
+    };
+    return this.students[studentIndex];
+  }
+
+  //PATCH
+  patchStudent(
+    id: number,
+    updatedFields: Partial<{ name: string; age: number }>,
+  ) {
+    const student = this.getStudentById(id);
+    Object.assign(student, updatedFields);
+    return student;
+  }
+
+  //DELETE
+  deleteStudent(id: number) {
+    const studentIndex = this.students.findIndex(
+      (student) => student.id === id,
+    );
+    if (studentIndex === -1)
+      throw new NotFoundException(`Student with ID ${id} not found.`);
+    const deletedStudent = this.students.splice(studentIndex, 1);
+    return {
+      message: `Student with ID ${id} deleted successfully.`,
+      deletedStudent: deletedStudent[0],
+    };
+  }
 }
