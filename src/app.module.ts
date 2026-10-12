@@ -24,6 +24,7 @@ import { MongoUserModule } from './mongo-user/mongo-user.module';
 import { MongoEmployeeModule } from './mongo-employee/mongo-employee.module';
 import { MongoProductModule } from './mongo-product/mongo-product.module';
 import { MongoLibraryModule } from './mongo-library/mongo-library.module';
+import { MongoProjectModule } from './mongo-project/mongo-project.module';
 
 @Module({
   imports: [
@@ -40,6 +41,7 @@ import { MongoLibraryModule } from './mongo-library/mongo-library.module';
     MongoEmployeeModule,
     MongoProductModule,
     MongoLibraryModule,
+    MongoProjectModule,
   ],
   controllers: [
     AppController,
