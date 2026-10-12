@@ -7,6 +7,13 @@ import { CreateEmployeeDto } from './dto/create-employee.dto';
 export class MongoEmployeeController {
   constructor(private readonly employeeService: MongoEmployeeService) {}
 
+  //   {
+  //     "title":"Suresh Panda",
+  //     "profile": {
+  //         "age":24,
+  //         "qualification":"BCA"
+  //     }
+  //  }
   @Post()
   async createEmployee(
     @Body() employeeData: CreateEmployeeDto,

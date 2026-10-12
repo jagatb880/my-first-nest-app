@@ -22,6 +22,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { MongoStudentModule } from './mongo-student/mongo-student.module';
 import { MongoUserModule } from './mongo-user/mongo-user.module';
 import { MongoEmployeeModule } from './mongo-employee/mongo-employee.module';
+import { MongoProductModule } from './mongo-product/mongo-product.module';
+import { MongoLibraryModule } from './mongo-library/mongo-library.module';
 
 @Module({
   imports: [
@@ -36,6 +38,8 @@ import { MongoEmployeeModule } from './mongo-employee/mongo-employee.module';
     MongoStudentModule,
     MongoUserModule,
     MongoEmployeeModule,
+    MongoProductModule,
+    MongoLibraryModule,
   ],
   controllers: [
     AppController,
